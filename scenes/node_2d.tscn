@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://cemaho0p8bjwr"]
+
+[ext_resource type="Texture2D" uid="uid://dbpd1qitj8nym" path="res://img/garaje.png" id="1_6e84v"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(561.5, 312)
+scale = Vector2(0.577604, 0.564815)
+texture = ExtResource("1_6e84v")
