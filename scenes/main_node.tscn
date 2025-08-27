@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://8rdlqav878pv"]
+[gd_scene load_steps=8 format=3 uid="uid://8rdlqav878pv"]
 
+[ext_resource type="Script" uid="uid://ry3hg2rdih6f" path="res://scripts/main_node.gd" id="1_brsxu"]
 [ext_resource type="PackedScene" uid="uid://c0nssosyhrhui" path="res://scenes/garage.tscn" id="1_e3fa1"]
 [ext_resource type="PackedScene" uid="uid://ci6l3qn5p31f1" path="res://scenes/main_character.tscn" id="2_5wdvg"]
 [ext_resource type="Texture2D" uid="uid://bqo5g5immf218" path="res://icon.svg" id="3_t1rhp"]
+[ext_resource type="Script" uid="uid://brdjue3j7w0s1" path="res://scripts/label_money.gd" id="4_7exka"]
+[ext_resource type="Script" uid="uid://dg86e3wcmqovx" path="res://scripts/label_views.gd" id="6_p3mmm"]
+[ext_resource type="Script" uid="uid://b0xmuu4cqw4sb" path="res://scripts/label_fans.gd" id="7_p3mmm"]
 
 [node name="Main Node" type="Node2D"]
+script = ExtResource("1_brsxu")
 
 [node name="Decoration" parent="." instance=ExtResource("1_e3fa1")]
 light_mask = 2
@@ -21,27 +26,36 @@ scale = Vector2(0.6, 0.6)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -162.0
-offset_top = 28.0
-offset_right = -50.0
-offset_bottom = 140.0
+offset_left = -244.0
+offset_bottom = 432.0
 grow_horizontal = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
 layout_mode = 2
-columns = 2
+columns = 3
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture = ExtResource("3_t1rhp")
-expand_mode = 2
+expand_mode = 4
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "
+"
+horizontal_alignment = 1
+script = ExtResource("4_7exka")
+
+[node name="Button_money" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Money"
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
@@ -49,14 +63,32 @@ texture = ExtResource("3_t1rhp")
 expand_mode = 4
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-text = "nigger
-"
-horizontal_alignment = 1
-
 [node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "nigger
+text = "
 "
 horizontal_alignment = 1
+script = ExtResource("6_p3mmm")
+
+[node name="Button_views" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Views/s"
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_t1rhp")
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+script = ExtResource("7_p3mmm")
+
+[node name="Button_fans" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Fans"
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_money" to="." method="_on_button_money_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_money" to="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Label" method="_on_button_money_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_views" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_views" to="." method="_on_button_views_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_fans" to="." method="_on_button_fans_pressed"]
