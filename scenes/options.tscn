@@ -18,10 +18,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 748.0
-offset_bottom = 395.0
+offset_left = -384.0
+offset_top = -207.5
+offset_right = 384.0
+offset_bottom = 207.5
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -49,10 +49,19 @@ text = "Mute"
 
 [node name="OptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-item_count = 2
+item_count = 3
 popup/item_0/text = "1980x1080"
 popup/item_0/id = 0
+popup/item_1/text = "1600x900"
 popup/item_1/id = 1
+popup/item_2/text = "1280x720"
+popup/item_2/id = 2
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
 
 [connection signal="value_changed" from="PanelContainer/MarginContainer/VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]
 [connection signal="toggled" from="PanelContainer/MarginContainer/VBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="item_selected" from="PanelContainer/MarginContainer/VBoxContainer/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
