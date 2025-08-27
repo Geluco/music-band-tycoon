@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c0nssosyhrhui" path="res://scenes/garage.tscn" id="1_e3fa1"]
 [ext_resource type="PackedScene" uid="uid://ci6l3qn5p31f1" path="res://scenes/main_character.tscn" id="2_5wdvg"]
-[ext_resource type="PackedScene" uid="uid://cq42aefiyclky" path="res://scenes/text_ui.tscn" id="3_t1rhp"]
+[ext_resource type="Texture2D" uid="uid://bqo5g5immf218" path="res://icon.svg" id="3_t1rhp"]
 
 [node name="Main Node" type="Node2D"]
 
@@ -15,4 +15,48 @@ z_index = 1
 position = Vector2(430, 385)
 scale = Vector2(0.6, 0.6)
 
-[node name="Text Ui" parent="." instance=ExtResource("3_t1rhp")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -162.0
+offset_top = 28.0
+offset_right = -50.0
+offset_bottom = 140.0
+grow_horizontal = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 0
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_t1rhp")
+expand_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_t1rhp")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "nigger
+"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "nigger
+"
+horizontal_alignment = 1
