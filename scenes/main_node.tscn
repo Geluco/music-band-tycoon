@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://8rdlqav878pv"]
+
+[ext_resource type="PackedScene" uid="uid://c0nssosyhrhui" path="res://scenes/garage.tscn" id="1_e3fa1"]
+[ext_resource type="PackedScene" uid="uid://ci6l3qn5p31f1" path="res://scenes/main_character.tscn" id="2_5wdvg"]
+[ext_resource type="PackedScene" uid="uid://cq42aefiyclky" path="res://scenes/text_ui.tscn" id="3_t1rhp"]
+
+[node name="Main Node" type="Node2D"]
+
+[node name="Decoration" parent="." instance=ExtResource("1_e3fa1")]
+light_mask = 2
+visibility_layer = 2
+
+[node name="Main Character" parent="." instance=ExtResource("2_5wdvg")]
+z_index = 1
+position = Vector2(430, 385)
+scale = Vector2(0.6, 0.6)
+
+[node name="Text Ui" parent="." instance=ExtResource("3_t1rhp")]
