@@ -57,6 +57,29 @@ horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
+<<<<<<< Updated upstream
 text = "nigger
 "
 horizontal_alignment = 1
+=======
+text = "Views/s"
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_t1rhp")
+stretch_mode = 5
+
+[node name="Label3" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+script = ExtResource("7_p3mmm")
+
+[node name="Button_fans" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+text = "Fans"
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_money" to="." method="_on_button_money_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_money" to="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Label" method="_on_button_money_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_views" to="." method="_on_button_views_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_views" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_fans" to="." method="_on_button_fans_pressed"]
+>>>>>>> Stashed changes
