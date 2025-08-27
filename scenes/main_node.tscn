@@ -1,27 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://8rdlqav878pv"]
+[gd_scene load_steps=11 format=3 uid="uid://8rdlqav878pv"]
 
 [ext_resource type="Script" uid="uid://ry3hg2rdih6f" path="res://scripts/main_node.gd" id="1_brsxu"]
-[ext_resource type="PackedScene" uid="uid://c0nssosyhrhui" path="res://scenes/garage.tscn" id="1_e3fa1"]
-[ext_resource type="PackedScene" uid="uid://ci6l3qn5p31f1" path="res://scenes/main_character.tscn" id="2_5wdvg"]
+[ext_resource type="Texture2D" uid="uid://dbpd1qitj8nym" path="res://img/garaje.png" id="2_63mur"]
+[ext_resource type="Texture2D" uid="uid://b6xs62muedwl3" path="res://img/main_character.png" id="3_63mur"]
 [ext_resource type="Texture2D" uid="uid://bqo5g5immf218" path="res://icon.svg" id="3_t1rhp"]
 [ext_resource type="Script" uid="uid://brdjue3j7w0s1" path="res://scripts/label_money.gd" id="4_7exka"]
 [ext_resource type="Script" uid="uid://dg86e3wcmqovx" path="res://scripts/label_views.gd" id="6_p3mmm"]
 [ext_resource type="Script" uid="uid://b0xmuu4cqw4sb" path="res://scripts/label_fans.gd" id="7_p3mmm"]
 [ext_resource type="Texture2D" uid="uid://ci2pw6gh0xpjn" path="res://img/unnamed-4.png" id="8_mbi2d"]
+[ext_resource type="FontFile" uid="uid://c4bdr2egxlgtk" path="res://resources/fonts/Rhythm of the Blast.ttf" id="9_63mur"]
+[ext_resource type="Texture2D" uid="uid://bd7ytcynkoy55" path="res://img/unnamed.png" id="10_dqosy"]
 
 [node name="Main Node" type="Node2D"]
 script = ExtResource("1_brsxu")
 
-[node name="Decoration" parent="." instance=ExtResource("1_e3fa1")]
-light_mask = 2
-visibility_layer = 2
+[node name="Garage" type="Sprite2D" parent="."]
+position = Vector2(964.5, 543)
+scale = Vector2(1.00885, 0.996296)
+texture = ExtResource("2_63mur")
 
-[node name="Main Character" parent="." instance=ExtResource("2_5wdvg")]
-z_index = 1
-position = Vector2(430, 385)
-scale = Vector2(0.6, 0.6)
+[node name="Character" type="Sprite2D" parent="."]
+position = Vector2(1034, 712)
+scale = Vector2(0.766692, 0.594089)
+texture = ExtResource("3_63mur")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
 anchors_preset = 1
@@ -88,25 +92,106 @@ script = ExtResource("7_p3mmm")
 layout_mode = 2
 text = "Fans"
 
-[node name="PanelContainer2" type="PanelContainer" parent="CanvasLayer"]
+[node name="MenuUpgrades" type="PanelContainer" parent="CanvasLayer"]
 offset_left = 173.0
 offset_top = 122.0
 offset_right = 1846.0
 offset_bottom = 1046.0
-scale = Vector2(0.975917, 0.855527)
+scale = Vector2(0.995755, 0.913314)
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer2"]
+[node name="MarginUpgrades" type="MarginContainer" parent="CanvasLayer/MenuUpgrades"]
 layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainer2/MarginContainer"]
+[node name="GridUpgrades" type="GridContainer" parent="CanvasLayer/MenuUpgrades/MarginUpgrades"]
 layout_mode = 2
+columns = 3
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer2/MarginContainer/GridContainer"]
+[node name="MarginImg1" type="MarginContainer" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MarginImg1"]
 layout_mode = 2
 texture = ExtResource("8_mbi2d")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MaginText1" type="MarginContainer" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MaginText1"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_63mur")
+theme_override_font_sizes/font_size = 100
+text = "Mejorar personaje +2 $/S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginButton1" type="MarginContainer" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MarginButton1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "Upgrade"
+
+[node name="MarginImg2" type="MarginContainer" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MarginImg2"]
+layout_mode = 2
+texture = ExtResource("10_dqosy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MaginText2" type="MarginContainer" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MaginText2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_63mur")
+theme_override_font_sizes/font_size = 100
+text = "Mejorar personaje +1 $/S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginButton2" type="MarginContainer" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MarginButton2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "Upgrade"
 
 [connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_money" to="." method="_on_button_money_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_money" to="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Label" method="_on_button_money_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_views" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_views" to="." method="_on_button_views_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_views" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_fans" to="." method="_on_button_fans_pressed"]
