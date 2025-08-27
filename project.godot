@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="music-band-tycoon"
-run/main_scene="uid://8rdlqav878pv"
+run/main_scene="uid://ce7ts0jgjp8ra"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
