@@ -1,16 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://8rdlqav878pv"]
+[gd_scene load_steps=4 format=3 uid="uid://8rdlqav878pv"]
 
-[ext_resource type="Script" uid="uid://bl80s1spk4nqy" path="res://scripts/main_node.gd" id="1_7exka"]
 [ext_resource type="PackedScene" uid="uid://c0nssosyhrhui" path="res://scenes/garage.tscn" id="1_e3fa1"]
 [ext_resource type="PackedScene" uid="uid://ci6l3qn5p31f1" path="res://scenes/main_character.tscn" id="2_5wdvg"]
 [ext_resource type="Texture2D" uid="uid://bqo5g5immf218" path="res://icon.svg" id="3_t1rhp"]
-[ext_resource type="Script" uid="uid://bigo6xx3b1ybt" path="res://scripts/money_label.gd" id="5_32378"]
-[ext_resource type="Script" uid="uid://dwshggakak413" path="res://scripts/views_label.gd" id="6_brsxu"]
-[ext_resource type="Texture2D" uid="uid://c8uchh7mu321l" path="res://img/Boton-canciones.png" id="7_mbi2d"]
-[ext_resource type="Script" uid="uid://dlcbbpj2vcavm" path="res://scripts/fans_label.gd" id="8_81nw7"]
 
 [node name="Main Node" type="Node2D"]
-script = ExtResource("1_7exka")
 
 [node name="Decoration" parent="." instance=ExtResource("1_e3fa1")]
 light_mask = 2
@@ -27,68 +21,42 @@ scale = Vector2(0.6, 0.6)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -195.0
-offset_bottom = 189.0
+offset_left = -162.0
+offset_top = 28.0
+offset_right = -50.0
+offset_bottom = 140.0
 grow_horizontal = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 0
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10
-columns = 3
+columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture = ExtResource("3_t1rhp")
-expand_mode = 4
-
-[node name="Money" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-text = "
-"
-horizontal_alignment = 1
-script = ExtResource("5_32378")
-
-[node name="Button_money" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-text = "Money"
+expand_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 texture = ExtResource("3_t1rhp")
 expand_mode = 4
-stretch_mode = 4
-
-[node name="Views" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-horizontal_alignment = 1
-script = ExtResource("6_brsxu")
-
-[node name="Button_views" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-text = "Views/s"
-
-[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-texture = ExtResource("7_mbi2d")
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-script = ExtResource("8_81nw7")
+text = "nigger
+"
+horizontal_alignment = 1
 
-[node name="Button_fans" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+[node name="Label2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "Fans"
-
-[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_money" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_money" to="." method="_on_button_money_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_views" to="." method="_on_button_views_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_fans" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/GridContainer/Button_fans" to="." method="_on_button_fans_pressed"]
+text = "nigger
+"
+horizontal_alignment = 1
