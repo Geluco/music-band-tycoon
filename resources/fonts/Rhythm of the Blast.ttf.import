@@ -2,6 +2,7 @@
 
 importer="font_data_dynamic"
 type="FontFile"
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
@@ -19,6 +20,9 @@ uid="uid://lmi5k5x4x08m"
 =======
 uid="uid://lmi5k5x4x08m"
 >>>>>>> Stashed changes
+=======
+uid="uid://c4bdr2egxlgtk"
+>>>>>>> parent of 1daa171 (Actualizacion)
 path="res://.godot/imported/Rhythm of the Blast.ttf-7da6d80286bae1f314735a8f3999590b.fontdata"
 
 [deps]

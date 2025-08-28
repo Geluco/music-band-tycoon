@@ -22,11 +22,16 @@ func _on_button_fans_pressed() -> void:
 
 
 #Codigo que muestra y oculta el menu de mejoras
+@onready var check_button: CheckButton = get_node("CanvasLayer/PanelStats/MarginStats/GridStats/CheckButton")
 var menuUpgradeInstance: Node = null
 var menuUpgradeCanvas: CanvasLayer = null
 
-func _on_button_open_upgrade_pressed() -> void:
-	if menuUpgradeInstance == null:
+func _ready():
+	check_button.toggled.connect(_on_check_button_toggled)
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		if menuUpgradeInstance == null:
 			var menuUpgrade = load("res://scenes/menuUpgrades.tscn")
 			menuUpgradeInstance = menuUpgrade.instantiate()
 			get_tree().root.add_child(menuUpgradeInstance)
@@ -34,3 +39,6 @@ func _on_button_open_upgrade_pressed() -> void:
 			menuUpgradeCanvas = menuUpgradeInstance.get_node("CanvasLayer")
 		if menuUpgradeCanvas:
 			menuUpgradeCanvas.show()
+	else:
+		if menuUpgradeCanvas:
+			menuUpgradeCanvas.hide()
