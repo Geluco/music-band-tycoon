@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://1fwfhlve0rd6"]
+
+[ext_resource type="Texture2D" uid="uid://bqo5g5immf218" path="res://icon.svg" id="1_5qpd0"]
+[ext_resource type="Script" uid="uid://b3sdhvabad6s7" path="res://scripts/canvas_stats.gd" id="1_yvcsd"]
+[ext_resource type="Script" uid="uid://brdjue3j7w0s1" path="res://scripts/label_money.gd" id="2_bqde7"]
+[ext_resource type="Script" uid="uid://dg86e3wcmqovx" path="res://scripts/label_views.gd" id="3_x8yd8"]
+[ext_resource type="Script" uid="uid://b0xmuu4cqw4sb" path="res://scripts/label_fans.gd" id="4_3dtt7"]
+
+[node name="canvasStats" type="Node2D"]
+script = ExtResource("1_yvcsd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelStats" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -248.0
+offset_top = 8.0
+offset_right = -4.0
+offset_bottom = 440.0
+grow_horizontal = 0
+
+[node name="MarginStats" type="MarginContainer" parent="CanvasLayer/PanelStats"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="GridStats" type="GridContainer" parent="CanvasLayer/PanelStats/MarginStats"]
+layout_mode = 2
+columns = 3
+
+[node name="TextureMoney" type="TextureRect" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+layout_mode = 2
+texture = ExtResource("1_5qpd0")
+expand_mode = 4
+
+[node name="LabelMoney" type="Label" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+layout_mode = 2
+text = "
+"
+horizontal_alignment = 1
+script = ExtResource("2_bqde7")
+
+[node name="ButtonMoney" type="Button" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+layout_mode = 2
+text = "Money"
+
+[node name="TextureViews" type="TextureRect" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+layout_mode = 2
+texture = ExtResource("1_5qpd0")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="LabelViews" type="Label" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+layout_mode = 2
+text = "
+"
+horizontal_alignment = 1
+script = ExtResource("3_x8yd8")
+
+[node name="ButtonViews" type="Button" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+layout_mode = 2
+text = "Views/s"
+
+[node name="TextureFans" type="TextureRect" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+layout_mode = 2
+texture = ExtResource("1_5qpd0")
+stretch_mode = 5
+
+[node name="LabelFans" type="Label" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+layout_mode = 2
+script = ExtResource("4_3dtt7")
+
+[node name="ButtonFans" type="Button" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+layout_mode = 2
+text = "Fans"
+
+[connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonMoney" to="CanvasLayer/PanelStats/MarginStats/GridStats/LabelMoney" method="_on_button_money_pressed"]
