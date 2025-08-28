@@ -85,19 +85,19 @@ layout_mode = 2
 text = "$/s"
 horizontal_alignment = 1
 
-[node name="CheckButton" type="CheckButton" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Upgrades
-Menu"
-alignment = 1
-
 [node name="LabelMoneyPSNumber" type="Label" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
 layout_mode = 2
 text = "
 "
 horizontal_alignment = 1
 script = ExtResource("6_m2vbg")
+
+[node name="CheckButton" type="CheckButton" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Upgrades
+Menu"
+alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonMoney" to="." method="_on_button_money_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonViews" to="." method="_on_button_views_pressed"]
