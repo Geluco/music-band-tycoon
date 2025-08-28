@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ci2pw6gh0xpjn" path="res://img/unnamed-4.png" id="1_1u0n0"]
 [ext_resource type="Script" uid="uid://bn52elnijrwab" path="res://scripts/menu_upgrades.gd" id="1_x874v"]
-[ext_resource type="FontFile" uid="uid://c4bdr2egxlgtk" path="res://resources/fonts/Rhythm of the Blast.ttf" id="2_x874v"]
+[ext_resource type="FontFile" uid="uid://b7biw1kaf61fc" path="res://resources/fonts/Rhythm of the Blast.ttf" id="2_x874v"]
 [ext_resource type="Texture2D" uid="uid://bd7ytcynkoy55" path="res://img/unnamed.png" id="3_roqhy"]
 
 [node name="MenuUpgrades" type="Node2D"]
@@ -11,6 +11,22 @@ script = ExtResource("1_x874v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -291.0
+offset_top = 144.0
+offset_right = -256.0
+offset_bottom = 179.0
+grow_horizontal = 0
+scale = Vector2(1, 1.223)
+
+[node name="ButtonClose" type="Button" parent="CanvasLayer/PanelContainer"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+text = "X"
 
 [node name="MenuUpgrades" type="PanelContainer" parent="CanvasLayer"]
 offset_left = 21.0
@@ -111,5 +127,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 43
 text = "Upgrade"
 
+[connection signal="pressed" from="CanvasLayer/PanelContainer/ButtonClose" to="." method="_on_button_close_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MarginButton1/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MarginButton2/Button2" to="." method="_on_button_2_pressed"]

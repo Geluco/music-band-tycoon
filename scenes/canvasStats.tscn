@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bqo5g5immf218" path="res://icon.svg" id="1_5qpd0"]
 [ext_resource type="Script" uid="uid://b3sdhvabad6s7" path="res://scripts/canvas_stats.gd" id="1_yvcsd"]
-[ext_resource type="Script" uid="uid://brdjue3j7w0s1" path="res://scripts/label_money.gd" id="2_bqde7"]
-[ext_resource type="Script" uid="uid://dg86e3wcmqovx" path="res://scripts/label_views.gd" id="3_x8yd8"]
-[ext_resource type="Script" uid="uid://b0xmuu4cqw4sb" path="res://scripts/label_fans.gd" id="4_3dtt7"]
-[ext_resource type="Script" uid="uid://bb52658t056nf" path="res://scripts/label_money_per_second.gd" id="6_m2vbg"]
+[ext_resource type="Script" path="res://scripts/label_money.gd" id="2_bqde7"]
+[ext_resource type="Script" path="res://scripts/label_views.gd" id="3_x8yd8"]
+[ext_resource type="Script" path="res://scripts/label_fans.gd" id="4_3dtt7"]
+[ext_resource type="Script" path="res://scripts/label_money_per_second.gd" id="6_m2vbg"]
 
 [node name="canvasStats" type="Node2D"]
 script = ExtResource("1_yvcsd")
@@ -92,14 +92,10 @@ text = "
 horizontal_alignment = 1
 script = ExtResource("6_m2vbg")
 
-[node name="CheckButton" type="CheckButton" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+[node name="Button_open_upgrade" type="Button" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Upgrades
-Menu"
-alignment = 1
 
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonMoney" to="." method="_on_button_money_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonViews" to="." method="_on_button_views_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonFans" to="." method="_on_button_fans_pressed"]
-[connection signal="toggled" from="CanvasLayer/PanelStats/MarginStats/GridStats/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/Button_open_upgrade" to="." method="_on_button_open_upgrade_pressed"]
