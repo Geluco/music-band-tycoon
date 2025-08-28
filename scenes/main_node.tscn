@@ -10,9 +10,10 @@
 [node name="canvasStats" parent="." instance=ExtResource("2_p3mmm")]
 
 [node name="MenuUpgrades" parent="." instance=ExtResource("3_32378")]
+position = Vector2(0, 1)
 
 [node name="Garage" type="Sprite2D" parent="."]
-position = Vector2(964.5, 543)
+position = Vector2(964, 543)
 scale = Vector2(1.00885, 0.996296)
 texture = ExtResource("2_63mur")
 

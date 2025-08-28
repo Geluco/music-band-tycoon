@@ -3,9 +3,9 @@ extends Node2D
 var n=0
 func _process(delta):
 	n+=1
-	if n>=100:
+	if n>=0:
 		n-=100
-		Global.money+=100
+		Global.money+=Global.moneyPerSecond
 
 
 func _on_button_views_pressed() -> void:
