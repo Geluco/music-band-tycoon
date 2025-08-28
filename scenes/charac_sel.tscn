@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://cu56qwbcg8wg8"]
+
+[ext_resource type="Script" uid="uid://deb3yvac0stkn" path="res://scripts/charac_sel.gd" id="1_47ien"]
+[ext_resource type="Script" uid="uid://dp4axmnl7q35n" path="res://scripts/charac_info.gd" id="2_0yjlb"]
+[ext_resource type="Texture2D" uid="uid://ci2pw6gh0xpjn" path="res://img/unnamed-4.png" id="2_te5yv"]
+[ext_resource type="Texture2D" uid="uid://b6xs62muedwl3" path="res://img/main_character.png" id="4_va3x7"]
+[ext_resource type="Texture2D" uid="uid://bd7ytcynkoy55" path="res://img/unnamed.png" id="5_fjhcl"]
+
+[sub_resource type="Resource" id="Resource_dky1i"]
+script = ExtResource("2_0yjlb")
+key = "Tostada"
+img = ExtResource("2_te5yv")
+metadata/_custom_type_script = "uid://dp4axmnl7q35n"
+
+[sub_resource type="Resource" id="Resource_30thk"]
+script = ExtResource("2_0yjlb")
+key = "Jamon"
+img = ExtResource("4_va3x7")
+metadata/_custom_type_script = "uid://dp4axmnl7q35n"
+
+[sub_resource type="Resource" id="Resource_x4ell"]
+script = ExtResource("2_0yjlb")
+key = "Aceite"
+img = ExtResource("5_fjhcl")
+metadata/_custom_type_script = "uid://dp4axmnl7q35n"
+
+[node name="CharacSel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_47ien")
+Character = Array[ExtResource("2_0yjlb")]([SubResource("Resource_dky1i"), SubResource("Resource_30thk"), SubResource("Resource_x4ell")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1080, 382)
+texture = ExtResource("2_te5yv")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = 184.5
+offset_right = 53.0
+offset_bottom = 215.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Select"
+
+[node name="next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -15.5
+offset_right = -478.0
+offset_bottom = 24.5
+grow_horizontal = 0
+grow_vertical = 2
+text = ">"
+
+[node name="previous" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 500.0
+offset_top = -15.5
+offset_right = 540.0
+offset_bottom = 24.5
+grow_vertical = 2
+text = "<"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="previous" to="." method="_on_previous_pressed"]

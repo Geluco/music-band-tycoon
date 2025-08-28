@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://8rdlqav878pv"]
+[gd_scene load_steps=7 format=3 uid="uid://8rdlqav878pv"]
 
+[ext_resource type="Script" uid="uid://ry3hg2rdih6f" path="res://scripts/main_node.gd" id="1_brsxu"]
 [ext_resource type="Texture2D" uid="uid://dbpd1qitj8nym" path="res://img/garaje.png" id="2_63mur"]
 [ext_resource type="PackedScene" uid="uid://1fwfhlve0rd6" path="res://scenes/canvasStats.tscn" id="2_p3mmm"]
 [ext_resource type="Texture2D" uid="uid://b6xs62muedwl3" path="res://img/main_character.png" id="3_63mur"]
@@ -7,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cauv6vdrywn5w" path="res://scenes/menu_members.tscn" id="3_brsxu"]
 
 [node name="Main Node" type="Node2D"]
+script = ExtResource("1_brsxu")
 
 [node name="canvasStats" parent="." instance=ExtResource("2_p3mmm")]
 

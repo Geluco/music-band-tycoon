@@ -1,6 +1,13 @@
 extends Node2D
 
 var n=0
+
+@onready var player=$Character
+
+func _ready() -> void:
+	if Global.SelectedPlayer != null:
+		player.texture=Global.SelectedPlayer
+
 func _process(delta):
 	n+=1
 	if n>=0:
