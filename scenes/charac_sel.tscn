@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cu56qwbcg8wg8"]
+[gd_scene load_steps=13 format=3 uid="uid://cu56qwbcg8wg8"]
 
 [ext_resource type="Script" uid="uid://deb3yvac0stkn" path="res://scripts/charac_sel.gd" id="1_47ien"]
 [ext_resource type="Script" uid="uid://dp4axmnl7q35n" path="res://scripts/charac_info.gd" id="2_0yjlb"]
 [ext_resource type="Texture2D" uid="uid://ci2pw6gh0xpjn" path="res://img/unnamed-4.png" id="2_te5yv"]
 [ext_resource type="Texture2D" uid="uid://b6xs62muedwl3" path="res://img/main_character.png" id="4_va3x7"]
 [ext_resource type="Texture2D" uid="uid://bd7ytcynkoy55" path="res://img/unnamed.png" id="5_fjhcl"]
+[ext_resource type="Texture2D" uid="uid://dynfuy07ji6xf" path="res://img/image001.png" id="6_fjhcl"]
+[ext_resource type="Texture2D" uid="uid://cpkbluliyuqwt" path="res://img/image002.png" id="7_dky1i"]
 
 [sub_resource type="Resource" id="Resource_dky1i"]
 script = ExtResource("2_0yjlb")
@@ -24,6 +26,18 @@ key = "Aceite"
 img = ExtResource("5_fjhcl")
 metadata/_custom_type_script = "uid://dp4axmnl7q35n"
 
+[sub_resource type="Resource" id="Resource_vsyte"]
+script = ExtResource("2_0yjlb")
+key = "normal"
+img = ExtResource("6_fjhcl")
+metadata/_custom_type_script = "uid://dp4axmnl7q35n"
+
+[sub_resource type="Resource" id="Resource_10s00"]
+script = ExtResource("2_0yjlb")
+key = "kink"
+img = ExtResource("7_dky1i")
+metadata/_custom_type_script = "uid://dp4axmnl7q35n"
+
 [node name="CharacSel" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -33,9 +47,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_47ien")
 Character = Array[ExtResource("2_0yjlb")]([SubResource("Resource_dky1i"), SubResource("Resource_30thk"), SubResource("Resource_x4ell")])
+hair = Array[ExtResource("2_0yjlb")]([SubResource("Resource_vsyte"), SubResource("Resource_10s00")])
+
+[node name="Hair" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(1006, 140)
+texture = ExtResource("6_fjhcl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1080, 382)
+position = Vector2(1080, 390)
 texture = ExtResource("2_te5yv")
 
 [node name="Button" type="Button" parent="."]
@@ -68,7 +88,7 @@ grow_horizontal = 0
 grow_vertical = 2
 text = ">"
 
-[node name="previous" type="Button" parent="."]
+[node name="previous_body" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -80,6 +100,35 @@ offset_bottom = 24.5
 grow_vertical = 2
 text = "<"
 
+[node name="next_hair" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 500.0
+offset_top = -320.0
+offset_right = 540.0
+offset_bottom = -280.0
+grow_vertical = 2
+text = "<"
+
+[node name="previous_hair" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -518.0
+offset_top = -320.0
+offset_right = -478.0
+offset_bottom = -280.0
+grow_horizontal = 0
+grow_vertical = 2
+text = ">"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="previous_body" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="next_hair" to="." method="_on_next_hair_pressed"]
+[connection signal="pressed" from="previous_hair" to="." method="_on_previous_hair_pressed"]

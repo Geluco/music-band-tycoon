@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://8rdlqav878pv"]
+[gd_scene load_steps=8 format=3 uid="uid://8rdlqav878pv"]
 
 [ext_resource type="Script" uid="uid://ry3hg2rdih6f" path="res://scripts/main_node.gd" id="1_brsxu"]
 [ext_resource type="Texture2D" uid="uid://dbpd1qitj8nym" path="res://img/garaje.png" id="2_63mur"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b6xs62muedwl3" path="res://img/main_character.png" id="3_63mur"]
 [ext_resource type="PackedScene" uid="uid://jm0yeyo3yq2v" path="res://scenes/menuUpgrades.tscn" id="3_32378"]
 [ext_resource type="PackedScene" uid="uid://cauv6vdrywn5w" path="res://scenes/menu_members.tscn" id="3_brsxu"]
+[ext_resource type="Texture2D" uid="uid://dynfuy07ji6xf" path="res://img/image001.png" id="7_p3mmm"]
 
 [node name="Main Node" type="Node2D"]
 script = ExtResource("1_brsxu")
@@ -26,3 +27,7 @@ texture = ExtResource("2_63mur")
 position = Vector2(1034, 712)
 scale = Vector2(0.766692, 0.594089)
 texture = ExtResource("3_63mur")
+
+[node name="characterH" type="Sprite2D" parent="."]
+position = Vector2(1027, 568)
+texture = ExtResource("7_p3mmm")

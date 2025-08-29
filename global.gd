@@ -4,3 +4,4 @@ var views=0
 var fans=0
 var moneyPerSecond=100
 var SelectedPlayer:Texture2D
+var SelectedHair:Texture2D
