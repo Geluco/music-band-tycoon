@@ -9,6 +9,19 @@
 script = ExtResource("1_4gq5v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel_close_button" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+
+[node name="Button_close" type="Button" parent="CanvasLayer/Panel_close_button"]
+layout_mode = 2
+text = "x"
 
 [node name="MenuUpgrades" type="PanelContainer" parent="CanvasLayer"]
 offset_left = 21.0
@@ -108,5 +121,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 43
 text = "Hire"
 
+[connection signal="pressed" from="CanvasLayer/Panel_close_button/Button_close" to="." method="_on_button_close_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MarginButton1/Button1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MarginButton2/Button2" to="." method="_on_button_2_pressed"]
