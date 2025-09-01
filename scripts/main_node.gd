@@ -18,6 +18,9 @@ func _ready() -> void:
 		get_tree().change_scene_to_file("res://scenes/charac_sel.tscn")
 
 func _process(delta):
+	#abre el menu al presionar la tecla esc
+	if Input.is_action_just_pressed("esc"):
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 	#generacion dinero por segundo
 	n+=1
 	if n>=0:

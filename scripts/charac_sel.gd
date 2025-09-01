@@ -45,6 +45,7 @@ func nextH()->void:
 	hairplayer.texture=hair[j].img
 #funcion que selecciona al personaje
 func sel()->void:
+	Global.firstTimeFlag=true
 	Global.SelectedPlayer=Character[i].img
 	Global.SelectedHair=hair[j].img
 	get_tree().change_scene_to_file("res://scenes/main_node.tscn")
