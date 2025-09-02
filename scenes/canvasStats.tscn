@@ -120,14 +120,8 @@ layout_mode = 2
 text = "Members
 menu"
 
-[node name="Button_locations_menu" type="Button" parent="CanvasLayer/PanelStats2/MarginStats/GridStats"]
-layout_mode = 2
-text = "Locations
-menu"
-
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonMoney" to="." method="_on_button_money_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonViews" to="." method="_on_button_views_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonFans" to="." method="_on_button_fans_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelStats2/MarginStats/GridStats/Button_upgrade_menu" to="." method="_on_button_upgrade_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelStats2/MarginStats/GridStats/Button_members_menu" to="." method="_on_button_members_menu_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelStats2/MarginStats/GridStats/Button_locations_menu" to="." method="_on_button_locations_menu_pressed"]

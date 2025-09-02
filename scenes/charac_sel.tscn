@@ -58,7 +58,7 @@ texture = ExtResource("6_fjhcl")
 position = Vector2(1080, 390)
 texture = ExtResource("2_te5yv")
 
-[node name="Button" type="Button" parent="."]
+[node name="select" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -73,7 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Select"
 
-[node name="next" type="Button" parent="."]
+[node name="next_body" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -127,8 +127,8 @@ grow_horizontal = 0
 grow_vertical = 2
 text = ">"
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
-[connection signal="pressed" from="previous_body" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="next_body" to="." method="_on_next_body_pressed"]
+[connection signal="pressed" from="previous_body" to="." method="_on_previous_body_pressed"]
 [connection signal="pressed" from="next_hair" to="." method="_on_next_hair_pressed"]
 [connection signal="pressed" from="previous_hair" to="." method="_on_previous_hair_pressed"]
