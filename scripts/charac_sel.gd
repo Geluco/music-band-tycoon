@@ -51,15 +51,15 @@ func sel()->void:
 	get_tree().change_scene_to_file("res://scenes/main_node.tscn")
 
 #se activa al presionar el boton de select
-func _on_button_pressed() -> void:
+func _on_select_pressed() -> void:
 	sel()
 
 #se activa al presionar el boton >
-func _on_next_pressed() -> void:
+func _on_next_body_pressed() -> void:
 	next()
 
 #se activa al presionar el boton <
-func _on_previous_pressed() -> void:
+func _on_previous_body_pressed() -> void:
 	prev()
 
 

@@ -1,11 +1,11 @@
 extends Node2D
 
 #declaracion de variables del menu de mejoras
-@onready var open_button_menu_upgrade: Button = get_node("CanvasLayer/PanelStats/MarginStats/GridStats/Button_upgrade_menu")
+@onready var open_button_menu_upgrade: Button = get_node("CanvasLayer/PanelStats2/MarginStats/GridStats/Button_upgrade_menu")
 var menuUpgradeInstance: Node = null
 var menuUpgradeCanvas: CanvasLayer = null
 #declaracion de variables del menu de miembros
-@onready var open_button: Button = get_node("CanvasLayer/PanelStats/MarginStats/GridStats/Button_members_menu")
+@onready var open_button_menu_members: Button = get_node("CanvasLayer/PanelStats2/MarginStats/GridStats/Button_members_menu")
 var menu_members_Instance: Node = null
 var menu_members_Canvas: CanvasLayer = null
 
@@ -35,7 +35,7 @@ func _ready() -> void:
 	menuUpgradeCanvas = menuUpgradeInstance.get_node("CanvasLayer")
 	
 	#codigo boton mostrar menu membros
-	open_button.pressed.connect(_on_button_members_menu_pressed)
+	open_button_menu_members.pressed.connect(_on_button_members_menu_pressed)
 	var menu_members = load("res://scenes/menu_members.tscn")
 	menu_members_Instance = menu_members.instantiate()
 	get_tree().root.add_child(menu_members_Instance)
