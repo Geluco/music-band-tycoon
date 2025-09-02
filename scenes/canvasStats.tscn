@@ -92,42 +92,18 @@ text = "
 horizontal_alignment = 1
 script = ExtResource("6_m2vbg")
 
-[node name="PanelStats2" type="PanelContainer" parent="CanvasLayer"]
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 227.0
-offset_bottom = 110.0
-
-[node name="MarginStats" type="MarginContainer" parent="CanvasLayer/PanelStats2"]
-layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="GridStats" type="GridContainer" parent="CanvasLayer/PanelStats2/MarginStats"]
-layout_mode = 2
-theme_override_constants/h_separation = 20
-columns = 6
-
-[node name="Button_upgrade_menu" type="Button" parent="CanvasLayer/PanelStats2/MarginStats/GridStats"]
+[node name="Button_upgrade_menu" type="Button" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
 layout_mode = 2
 text = "Upgrade
 menu"
 
-[node name="Button_members_menu" type="Button" parent="CanvasLayer/PanelStats2/MarginStats/GridStats"]
+[node name="Button_members_menu" type="Button" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
 layout_mode = 2
 text = "Members
-menu"
-
-[node name="Button_locations_menu" type="Button" parent="CanvasLayer/PanelStats2/MarginStats/GridStats"]
-layout_mode = 2
-text = "Locations
 menu"
 
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonMoney" to="." method="_on_button_money_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonViews" to="." method="_on_button_views_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonFans" to="." method="_on_button_fans_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelStats2/MarginStats/GridStats/Button_upgrade_menu" to="." method="_on_button_upgrade_menu_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelStats2/MarginStats/GridStats/Button_members_menu" to="." method="_on_button_members_menu_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelStats2/MarginStats/GridStats/Button_locations_menu" to="." method="_on_button_locations_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/Button_upgrade_menu" to="." method="_on_button_upgrade_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/Button_members_menu" to="." method="_on_button_members_menu_pressed"]
