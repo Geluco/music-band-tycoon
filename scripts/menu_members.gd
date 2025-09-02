@@ -8,10 +8,6 @@ extends Node2D
 @onready var canvaslayer_members=get_node("CanvasLayer")
 @onready var button_close: Button = get_node("CanvasLayer/Panel_close_button/Button_close")  # ruta correcta a tu botón
 
-func _ready() -> void:
-	#inicia el boton
-	button_close.pressed.connect(_on_button_close_pressed)
-
 
 
 func _on_button_1_pressed() -> void:

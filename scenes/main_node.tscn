@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://8rdlqav878pv"]
+[gd_scene load_steps=9 format=3 uid="uid://8rdlqav878pv"]
 
 [ext_resource type="Script" uid="uid://ry3hg2rdih6f" path="res://scripts/main_node.gd" id="1_brsxu"]
 [ext_resource type="Texture2D" uid="uid://dbpd1qitj8nym" path="res://img/garaje.png" id="2_63mur"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b6xs62muedwl3" path="res://img/main_character.png" id="3_63mur"]
 [ext_resource type="PackedScene" uid="uid://jm0yeyo3yq2v" path="res://scenes/menuUpgrades.tscn" id="3_32378"]
 [ext_resource type="PackedScene" uid="uid://cauv6vdrywn5w" path="res://scenes/menu_members.tscn" id="3_brsxu"]
+[ext_resource type="PackedScene" uid="uid://cpe255vmwoiwc" path="res://scenes/menu_localizations.tscn" id="5_mbi2d"]
 [ext_resource type="Texture2D" uid="uid://dynfuy07ji6xf" path="res://img/image001.png" id="7_p3mmm"]
 
 [node name="Main Node" type="Node2D"]
@@ -18,10 +19,14 @@ position = Vector2(0, 1)
 
 [node name="MenuMembers" parent="." instance=ExtResource("3_brsxu")]
 
-[node name="Garage" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(964, 543)
 scale = Vector2(1.00885, 0.996296)
 texture = ExtResource("2_63mur")
+
+[node name="menu_localizations" parent="Background" instance=ExtResource("5_mbi2d")]
+position = Vector2(-955.543, -545.019)
+scale = Vector2(0.991227, 1.00372)
 
 [node name="Character" type="Sprite2D" parent="."]
 position = Vector2(1034, 712)

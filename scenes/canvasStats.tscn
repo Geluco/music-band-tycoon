@@ -92,18 +92,39 @@ text = "
 horizontal_alignment = 1
 script = ExtResource("6_m2vbg")
 
-[node name="Button_upgrade_menu" type="Button" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+[node name="PanelMenus" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 221.0
+offset_bottom = 114.0
+
+[node name="MarginStats" type="MarginContainer" parent="CanvasLayer/PanelMenus"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="GridStats" type="GridContainer" parent="CanvasLayer/PanelMenus/MarginStats"]
+layout_mode = 2
+columns = 3
+
+[node name="Button_upgrade_menu" type="Button" parent="CanvasLayer/PanelMenus/MarginStats/GridStats"]
 layout_mode = 2
 text = "Upgrade
 menu"
 
-[node name="Button_members_menu" type="Button" parent="CanvasLayer/PanelStats/MarginStats/GridStats"]
+[node name="Button_members_menu" type="Button" parent="CanvasLayer/PanelMenus/MarginStats/GridStats"]
 layout_mode = 2
 text = "Members
 menu"
 
+[node name="Button_localization_menu" type="Button" parent="CanvasLayer/PanelMenus/MarginStats/GridStats"]
+layout_mode = 2
+
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonMoney" to="." method="_on_button_money_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonViews" to="." method="_on_button_views_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/ButtonFans" to="." method="_on_button_fans_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/Button_upgrade_menu" to="." method="_on_button_upgrade_menu_pressed"]
-[connection signal="pressed" from="CanvasLayer/PanelStats/MarginStats/GridStats/Button_members_menu" to="." method="_on_button_members_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelMenus/MarginStats/GridStats/Button_upgrade_menu" to="." method="_on_button_upgrade_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelMenus/MarginStats/GridStats/Button_members_menu" to="." method="_on_button_members_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelMenus/MarginStats/GridStats/Button_localization_menu" to="." method="_on_button_localization_menu_pressed"]

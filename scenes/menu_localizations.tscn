@@ -1,14 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://cauv6vdrywn5w"]
+[gd_scene load_steps=9 format=3 uid="uid://cpe255vmwoiwc"]
 
-[ext_resource type="Texture2D" uid="uid://ci2pw6gh0xpjn" path="res://img/unnamed-4.png" id="1_1y6vs"]
-[ext_resource type="Script" uid="uid://rnmk0w2do7ct" path="res://scripts/menu_members.gd" id="1_4gq5v"]
-[ext_resource type="Texture2D" uid="uid://bd7ytcynkoy55" path="res://img/unnamed.png" id="3_4p6kh"]
+[ext_resource type="Script" uid="uid://bty324xf5sovf" path="res://menu_localizations.gd" id="1_tukkb"]
+[ext_resource type="Script" uid="uid://cujpcppvj015h" path="res://scripts/localization_info.gd" id="2_nh7wy"]
+[ext_resource type="Texture2D" uid="uid://dbpd1qitj8nym" path="res://img/garaje.png" id="3_g6vhk"]
+[ext_resource type="Texture2D" uid="uid://bni44dak6jpej" path="res://imagenes/escenario1.jpg" id="4_u1bmi"]
+[ext_resource type="Texture2D" uid="uid://bi6olowmhuxeg" path="res://imagenes/escenario2.jpg" id="5_3qfoq"]
 
-[node name="MenuMembers" type="Node2D"]
-script = ExtResource("1_4gq5v")
+[sub_resource type="Resource" id="Resource_qbd1p"]
+script = ExtResource("2_nh7wy")
+img = ExtResource("3_g6vhk")
+metadata/_custom_type_script = "uid://cujpcppvj015h"
+
+[sub_resource type="Resource" id="Resource_cht4p"]
+script = ExtResource("2_nh7wy")
+img = ExtResource("4_u1bmi")
+metadata/_custom_type_script = "uid://cujpcppvj015h"
+
+[sub_resource type="Resource" id="Resource_6drw7"]
+script = ExtResource("2_nh7wy")
+img = ExtResource("5_3qfoq")
+metadata/_custom_type_script = "uid://cujpcppvj015h"
+
+[node name="menu_localizations" type="Node2D"]
+script = ExtResource("1_tukkb")
+background_data = Array[ExtResource("2_nh7wy")]([SubResource("Resource_qbd1p"), SubResource("Resource_cht4p"), SubResource("Resource_6drw7")])
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="MenuUpgrades" type="PanelContainer" parent="CanvasLayer"]
 offset_left = 21.0
@@ -38,7 +55,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MarginImg1"]
 layout_mode = 2
-texture = ExtResource("1_1y6vs")
+texture = ExtResource("4_u1bmi")
 expand_mode = 3
 stretch_mode = 5
 
@@ -51,7 +68,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades/MarginImg2"]
 layout_mode = 2
-texture = ExtResource("3_4p6kh")
+texture = ExtResource("5_3qfoq")
 stretch_mode = 5
 
 [node name="MaginText1" type="MarginContainer" parent="CanvasLayer/MenuUpgrades/MarginUpgrades/GridUpgrades"]
