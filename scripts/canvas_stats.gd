@@ -7,7 +7,15 @@ var menuUpgradeCanvas: CanvasLayer = null
 #declaracion de variables del menu de miembros
 @onready var open_button_menu_members: Button = get_node("CanvasLayer/PanelStats2/MarginStats/GridStats/Button_members_menu")
 var menu_members_Instance: Node = null
-var menu_members_Canvas: CanvasLayer = null
+var menu_members_canvas: CanvasLayer = null
+
+'''
+@onready var open_button_menu_locations: Button = get_node("CanvasLayer/PanelStats2/MarginStats/GridStats/Button_locations_menu")
+var menu_locations_Instance: Node = null
+var menu_locations_canvas: CanvasLayer = null
+'''
+
+
 
 #views al presionar boton
 func _on_button_views_pressed() -> void:
@@ -40,7 +48,17 @@ func _ready() -> void:
 	menu_members_Instance = menu_members.instantiate()
 	get_tree().root.add_child(menu_members_Instance)
 	# Busca el CanvasLayer dentro de la escena cargada
-	menu_members_Canvas = menu_members_Instance.get_node("CanvasLayer")
+	menu_members_canvas = menu_members_Instance.get_node("CanvasLayer")
+
+	#codigo boton mostrar menu localizaciones
+	'''
+	open_button_menu_locations.pressed.connect(_on_button_locations_menu_pressed)
+	var menu_locations = load("res://scenes/menu_locations.tscn")
+	menu_locations_Instance = menu_locations.instantiate()
+	get_tree().root.add_child(menu_locations_Instance)
+	# Busca el CanvasLayer dentro de la escena cargada
+	menu_locations_canvas = menu_locations_Instance.get_node("CanvasLayer")
+'''
 
 #funcion boton mostrar menu mejora 
 func _on_button_upgrade_menu_pressed() -> void:
@@ -48,4 +66,9 @@ func _on_button_upgrade_menu_pressed() -> void:
 
 #funcion boton mostrar menu miembros
 func _on_button_members_menu_pressed() -> void:
-	menu_members_Canvas.show()
+	menu_members_canvas.show()
+
+'''
+func _on_button_locations_menu_pressed() -> void:
+	menu_locations_canvas.show()
+'''
