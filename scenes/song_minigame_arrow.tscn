@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://8p4b8u7sxts4"]
+
+[ext_resource type="Script" uid="uid://b2m5lss67tg5o" path="res://scripts/songMinigameArrow.gd" id="1_7vrhu"]
+[ext_resource type="Texture2D" uid="uid://bqo5g5immf218" path="res://icon.svg" id="2_2wahs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sy82p"]
+size = Vector2(6.5, 6.5)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_7vrhu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(987, 181)
+scale = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_sy82p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(986, 182)
+texture = ExtResource("2_2wahs")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
