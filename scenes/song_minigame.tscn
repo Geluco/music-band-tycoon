@@ -1,8 +1,49 @@
-[gd_scene load_steps=2 format=3 uid="uid://du8e47tggqoqw"]
+[gd_scene load_steps=4 format=3 uid="uid://du8e47tggqoqw"]
 
 [ext_resource type="Script" uid="uid://b4fgmfj5bc4ml" path="res://scripts/songMinigame.gd" id="1_k7tuq"]
+[ext_resource type="PackedScene" uid="uid://8p4b8u7sxts4" path="res://scenes/song_minigame_arrow.tscn" id="2_k7tuq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_facox"]
+size = Vector2(36, 33)
 
 [node name="song" type="Node2D"]
 script = ExtResource("1_k7tuq")
+arrow = ExtResource("2_k7tuq")
 
 [node name="Node2D" type="Node2D" parent="."]
+
+[node name="circle" type="Area2D" parent="Node2D"]
+position = Vector2(507, 951)
+scale = Vector2(4.14445, 4.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/circle"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_facox")
+
+[node name="circle2" type="Area2D" parent="Node2D"]
+position = Vector2(826, 951)
+scale = Vector2(4.14445, 4.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/circle2"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_facox")
+
+[node name="circle3" type="Area2D" parent="Node2D"]
+position = Vector2(1146, 944)
+scale = Vector2(4.14445, 4.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/circle3"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_facox")
+
+[node name="circle4" type="Area2D" parent="Node2D"]
+position = Vector2(1457, 946)
+scale = Vector2(4.14445, 4.12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/circle4"]
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_facox")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
