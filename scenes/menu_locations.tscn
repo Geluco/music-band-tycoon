@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://cwkrmjm1vqt1s" path="res://scripts/menu_locations.gd" id="1_rpxht"]
 [ext_resource type="Texture2D" uid="uid://dbpd1qitj8nym" path="res://img/garaje.png" id="2_cag3g"]
 [ext_resource type="Script" uid="uid://dp4axmnl7q35n" path="res://scripts/charac_info.gd" id="3_2sov7"]
-[ext_resource type="Texture2D" uid="uid://dc55fkjdrreyr" path="res://img/escenario1.jpg" id="4_qteu3"]
-[ext_resource type="Texture2D" uid="uid://ba5lfy7iobrin" path="res://img/escenario2.jpg" id="5_27gp1"]
-[ext_resource type="PackedScene" uid="uid://8rdlqav878pv" path="res://scenes/main_node.tscn" id="6_gppnv"]
+[ext_resource type="Texture2D" uid="uid://cfrpxsv6qmjut" path="res://img/escenario1.jpg" id="4_qteu3"]
+[ext_resource type="Texture2D" uid="uid://b1bv5yuoetnif" path="res://img/escenario2.jpg" id="5_27gp1"]
+
 
 [sub_resource type="Resource" id="Resource_gppnv"]
 script = ExtResource("3_2sov7")
@@ -28,7 +28,7 @@ metadata/_custom_type_script = "uid://dp4axmnl7q35n"
 [node name="menu_locations" type="Node2D"]
 script = ExtResource("1_rpxht")
 background_data = Array[ExtResource("3_2sov7")]([SubResource("Resource_gppnv"), SubResource("Resource_cag3g"), SubResource("Resource_2sov7")])
-background_scene = ExtResource("6_gppnv")
+background_scene_path = "res://scenes/main_node.tscn"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

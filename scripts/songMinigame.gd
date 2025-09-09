@@ -7,7 +7,7 @@ func _ready():
 	positions.append(826)
 	positions.append(1146)
 	positions.append(1457)
-
+	
 func _spawn():
 	var KeyInstance=arrow.instance()
 	var pos=Vector2(0,0)
